@@ -1,0 +1,89 @@
+.post {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.post p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.post small {
+    color: #666;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.post button {
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    padding: 8px 16px;
+    transition: background-color 0.2s;
+}
+
+.post button:hover {
+    background-color: #1991db;
+}
+
+.post button.liked {
+    background-color: #e0245e;
+}
+
+.comments-section {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    max-height: 80px;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+.comments-list .comment {
+    background-color: rgba(128, 128, 128, 0.363);
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.comment p {
+    margin: 5px 0;
+    
+}
+
+.comment button {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.delete-button {
+    background-color: #dc3545 !important;
+}
+
+.delete-button:hover {
+    background-color: #c82333 !important;
+}
+
+.edit-button {
+    background-color: #28a745 !important;
+}
+
+.edit-button:hover {
+    background-color: #218838 !important;
+}
