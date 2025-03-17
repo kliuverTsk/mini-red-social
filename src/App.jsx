@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import Home from './pages/Home';
-import { Login } from './pages/login';
-import { Register } from './pages/register';
+import Home from './pages/home/Home';
+import { Login } from './pages/login-register/login';
+import { Register } from './pages/login-register/register';
 import { Navbar } from './components/navbar/navbar';
-import { Profile } from './pages/profile';
+import { Profile } from './pages/profile/profile';
 
 function App() {
   return (

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
+import './login-register.css'
 
 export const Login = () => {
     const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ export const Login = () => {
   }
 
   return (
-    <div>
+    <div className="container-loginRegister">
         <h1>Login</h1>
         {error && <p style={{color: 'red'}}>{error}</p>}
         <form onSubmit={handleSubmit}>

@@ -1,16 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"; // Agregar esta importación
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmtu3P_PzPuFIA-m01JATdDoOy2MFx9H4",
-  authDomain: "red-social-659f3.firebaseapp.com",
-  projectId: "red-social-659f3",
-  storageBucket: "red-social-659f3.firebasestorage.app",
-  messagingSenderId: "937524418410",
-  appId: "1:937524418410:web:a211d1c9b28cb86a1fb713"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app); // Agregar esta línea
+export const db = getFirestore(app);
+export const storage = getStorage(app);

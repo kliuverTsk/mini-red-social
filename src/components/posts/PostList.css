@@ -1,58 +1,157 @@
-.post {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+/* Container principal */
+.posts-container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    max-width: 600px;
-}
-
-.post p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.post small {
-    color: #666;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.post button {
-    background-color: #1da1f2;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    margin: 5px;
-    padding: 8px 16px;
-    transition: background-color 0.2s;
-}
-
-.post button:hover {
-    background-color: #1991db;
-}
-
-.post button.liked {
-    background-color: #e0245e;
-}
-
-.comments-section {
-    margin-top: 15px;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-}
-
-.comment-form textarea {
     width: 100%;
-    max-height: 80px;
-    min-height: 80px;
+    box-sizing: border-box;
+}
+
+/* Estilos del post */
+.post {
+    background-color: #d6d2d2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.post-content {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ajustes para elementos de formulario */
+.edit-form textarea,
+.comment-form textarea,
+.edit-comment-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+/* Ajustes para imágenes */
+.post-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Ajustes para información del post */
+.post-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Formulario de edición de posts */
+.edit-form textarea {
+    width: 95%;
+    min-height: 100px;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 20px;
     margin-bottom: 10px;
     resize: vertical;
+    background-color: #999393fb;
+    color: #333;
+    font-size: 1rem;
+}
+
+.edit-form .edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.post-content {
+    margin-bottom: 15px;
+}
+
+.post-image {
+    margin: 10px 0;
+}
+
+.post-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    color: #666;
+}
+
+/* Botones y acciones */
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.like-button.liked {
+    animation: like-animation 0.3s ease;
+}
+
+.author-actions button,
+.comment-form button,
+.edit-buttons button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.author-actions button:first-child {
+    background-color: #dc3545;
+}
+
+/* Sección de comentarios */
+.comments-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+/* Formulario de edición de comentarios */
+.edit-comment-form textarea {
+    width: 95%;
+    min-height: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    resize: vertical;
+    background-color: #999393fb;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.edit-comment-form .edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
 }
 
 .comments-list .comment {
@@ -62,28 +161,81 @@
     margin: 10px 0;
 }
 
-.comment p {
-    margin: 5px 0;
-    
+/* Botón de cargar más */
+.load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
-.comment button {
-    font-size: 12px;
-    padding: 4px 8px;
+.load-more:hover {
+    background-color: #1991db;
 }
 
-.delete-button {
-    background-color: #dc3545 !important;
+.load-more:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
-.delete-button:hover {
-    background-color: #c82333 !important;
+.load-more-button:disabled {
+    background-color: #cccccc;
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
-.edit-button {
-    background-color: #28a745 !important;
+@keyframes like-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
-.edit-button:hover {
-    background-color: #218838 !important;
+
+/* Botón de ver comentarios */
+.toggle-comments {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+.toggle-comments:hover {
+    background-color: #1991db;
+}
+
+
+/* Formulario de comentarios */
+.comment-form textarea {
+    width: 95%;
+    min-height: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    resize: vertical;
+    background-color: #999393fb;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.comment-form button {
+    margin-left: 10px;
 }
