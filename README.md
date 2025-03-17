@@ -7,3 +7,4 @@ Red social en tiempo real con React y Firebase. Permite compartir posts, dar lik
 - Posts con imágenes
 - Likes y comentarios
 - Scroll infinito
+"# mini-red-social" 
