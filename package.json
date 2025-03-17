@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kliuv.github.io/mini-red-social",
+  "homepage": "https://kliuverTsk.github.io/mini-red-social",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
